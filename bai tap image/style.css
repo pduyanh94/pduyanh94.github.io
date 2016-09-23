@@ -1,0 +1,24 @@
+*{
+box-sizing:border-box;}
+img{
+
+	max-width: 100%;
+	max-height: 300px;
+}
+.cauthu{
+	border-top-width:1px; 
+	float:left;
+	width:30%;
+	padding:10px;
+	margin:5;
+}
+.cauthu img:hover{
+	border-radius: 50%;
+}
+.wrap {
+	max-width:400px;
+	margin:auto;
+}
+#main-menu a{
+text-align: center;
+}
