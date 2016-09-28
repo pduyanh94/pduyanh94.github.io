@@ -1,4 +1,15 @@
-
+@keyframes fade{
+	 50% {
+            opacity: 0.02;
+        }
+}
+@keyframes move {
+    0%   {background-color: red;  }
+    25%  {background-color: yellow;  }
+    50%  {background-color: blue; }
+    75%  {background-color: green; }
+    100% {background-color: red; }
+}
 .cauthu{
 	border-top-width:5px; 
 	float:left;
@@ -7,8 +18,23 @@
 	padding:15px;
 	margin:5;
 }
-
+.cauthu img {
+	opacity: 0.5;
+	transition:all 0.5s ease-in-out;
+}
 
 .cauthu img:hover{
-	border-radius: 50%;
+	opacity: 1;
+
 }
+.chuky{
+	 animation: fade 4s infinite 200ms,move 3s infinite ;
+	margin:0;
+	padding:30px 0 15px 0;
+	font-size:1em;
+
+	font-family: Georgia;
+	text-transform: uppercase;
+	float:right;
+}
+
