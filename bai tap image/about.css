@@ -3,12 +3,12 @@
             opacity: 0.02;
         }
 }
-@keyframes move {
-    0%   {background-color: red;  }
-    25%  {background-color: yellow;  }
-    50%  {background-color: blue; }
-    75%  {background-color: green; }
-    100% {background-color: red; }
+
+@keyframes mymove{
+    from{margin-left:100%;
+               width:300%;}
+    to{ margin-left:0%;
+               width:100%;}
 }
 .cauthu{
 	border-top-width:5px; 
@@ -28,13 +28,14 @@
 
 }
 .chuky{
-	 animation: fade 4s infinite 200ms,move 3s infinite ;
+
 	margin:0;
 	padding:30px 0 15px 0;
 	font-size:1em;
 
 	font-family: Georgia;
 	text-transform: uppercase;
-	float:right;
+	float:left;
+	animation: fade 4s infinite 200ms, mymove 4s infinite ;
 }
 
