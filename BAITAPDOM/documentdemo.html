@@ -1,0 +1,64 @@
+<<html>
+<head>
+	<title>Demo Document</title>
+
+<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">   
+function changeFontSize(x){
+	 var a=document.getElementsByTagName('p');
+	//document.getElementById("p").style.fontSize=x+'px';
+	 for(var i=0;i<a.length;i++){
+	 a[i].style.fontSize=x+'px';
+	 }
+	
+}
+
+function increaseFontSize(paragraph){
+var pa=document.getElementById(paragraph);
+var x=window.getComputedStyle(pa,null).getPropertyValue('font-size');
+var ketqua=parseInt(x);
+pa.style.fontSize=ketqua+1+'px';
+	
+
+}
+function decreaseFontSize(paragraph){
+	var pa=document.getElementById(paragraph);
+var x=window.getComputedStyle(pa,null).getPropertyValue('font-size');
+var ketqua=parseInt(x);
+pa.style.fontSize=ketqua-1+'px';
+}
+function changeColor(){
+	document.getElementById('p1').style.color='blue';
+	document.getElementById('p2').style.color='yellow';
+	document.getElementById('p3').style.color='red';
+
+}
+function changeBgColor(color){
+	document.body.style.backgroundColor=color;
+}
+function copyContent(){
+	document.getElementById('p1').innerHTML =
+    document.getElementById('p2').innerHTML
+}
+
+</script>
+</head>
+
+
+
+
+<body>
+	<div class="box">
+<p id="p1">Hoàng hôn[1] hay còn gọi là chiều tà, nhá nhem, chạng vạng, nhá nhem tối, tối nhọ mặt người, Hán-Việt: bàng vãn, bạc mộ v.v là các cụm từ để chỉ một khoảng thời gian kể từ ngay sau khi Mặt Trời lặn cho tới khi trời tối hẳn (buổi tối). Nó là khái niệm gắn liền với vị trí biểu kiến của Mặt Trời ở phía dưới đường chân trời. </p>
+<p id="p2" class="no image">Hoàng hôn dân dụng là khoảng thời gian mà Mặt Trời nằm từ 0 tới 6 độ phía dưới đường chân trời vào buổi chiều-tối. Vào thời gian này các vật thể còn có thể phân biệt được và một số ngôi sao (các định tinh và một số hành tinh của hệ Mặt Trời) đã xuất hiện trên bầu trời, có thể nhìn thấy bằng mắt thường khi trời quang mây. Nó gần trùng với khái niệm civil dusk[2] trong tiếng Anh.</p>
+<p id="p3" class="no image">Hoàng hôn hàng hải là thời gian khi Mặt Trời nằm trong khoảng từ 6 tới 12 độ phía dưới đường chân trời vào buổi chiều-tối. Vào thời gian này, các vật thể không còn có thể phân biệt được nữa, đường chân trời cũng không còn nhìn thấy được bằng mắt thường. Nó gần trùng với khái niệm nautical dusk[2] trong tiếng Anh.</p>
+<button type="button" onclick="changeFontSize(30)">change font size</button></br>
+<button type="button" onclick="increaseFontSize('p1')">increase font size</button></br>
+<button type="button" onclick="decreaseFontSize('p2')">decrease font size</button></br>
+<button type="button" onclick="changeColor()">changeColor</button></br>
+<button type="button" onclick="changeBgColor('red')">changebgColor</button></br>
+<button type="button" onclick="copyContent()">copy</button></br>
+</div>
+</body>
+</html>

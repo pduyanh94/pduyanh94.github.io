@@ -1,0 +1,6 @@
+.box {
+	margin: auto;
+	box-sizing:border-box;
+	float: left;
+}
+
