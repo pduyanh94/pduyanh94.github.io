@@ -1,0 +1,111 @@
+<<html>
+<head>
+	<title>demo calculator</title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<form name="frm">
+	<input name="result" id="display">
+</br>
+	<input type="button" name="1" value="1" onClick="run1()" style="width:40px">
+	<input type="button" name="2" value="2" onClick="run2()" style="width:40px">
+	<input type="button" name="3" value="3" onClick="run3()" style="width:40px">
+	<input type="button" name="plus" value="+" onClick="runplus()" style="width:40px">
+</br>
+<input type="button" name="4" value="4" onClick="run4()" style="width:40px">
+	<input type="button" name="5" value="5" onClick="run5()" style="width:40px">
+	<input type="button" name="6" value="6" onClick="run6()" style="width:40px">
+	<input type="button" name="minus" value="-" onClick="runminus()" style="width:40px">
+</br>
+<input type="button" name="7" value="7" onClick="run7()" style="width:40px">
+	<input type="button" name="8" value="8" onClick="run8()" style="width:40px">
+	<input type="button" name="9" value="9" onClick="run9()" style="width:40px">
+	<input type="button" name="divide" value="/" onClick="rundivide()" style="width:40px">
+</br>
+<input type="button" name="0" value="0" onClick="run0()" style="width:40px">
+	<input type="button" name="." value="." onClick="runpoint()" style="width:40px">
+	<input type="button" name="%" value="%" onClick="runpercent()" style="width:40px">
+	<input type="button" name="x" value="x" onClick="runmultiply()"style="width:40px">
+</br>
+<input type="button" name="^2" value="^2" onClick="runpower(2)"style="width:83px">
+
+<input type="button" name=" √" value=" √" onClick="sqrt()" style="width:83px"></br>
+
+<input type="button" name="C" value="C" onClick="runclear()"style="width:83px">
+
+<input type="button" name="calc" value="=" onClick="evalu()" style="width:83px">
+
+</form>
+<script type="text/javascript">
+var box=document.getElementById('display');
+function run1(){
+	document.frm.result.value += "1";
+}
+function run2(){
+	document.frm.result.value += "2";
+}
+function run3(){
+	document.frm.result.value += "3";
+}
+function runplus(){
+	document.frm.result.value += "+";
+}
+
+function run4(){
+	document.frm.result.value += "4";
+}
+function run5(){
+	document.frm.result.value += "5";
+}
+function run6(){
+	document.frm.result.value += "6";
+}
+function runminus(){
+	document.frm.result.value += "-";
+}
+
+function run7(){
+	document.frm.result.value += "7";
+}
+function run8(){
+	document.frm.result.value += "8";
+}
+function run9(){
+	document.frm.result.value += "9";
+}
+function rundivide(){
+	document.frm.result.value += "/";
+}
+
+function run0(){
+	document.frm.result.value += "0";
+}
+function runpoint(){
+	document.frm.result.value += ".";
+}
+function runpercent(){
+	document.frm.result.value += "%";
+}
+function runmultiply(){
+	document.frm.result.value += "x";
+}
+function runclear(){
+	document.frm.result.value ="";
+}
+function evalu(){
+	var evalo=eval(document.frm.result.value);
+	document.frm.result.value=evalo;
+}
+function runpower(y){
+	x=box.value;
+	x=Math.pow(x,y);
+	box.value=x;
+}
+function sqrt(x){
+x=box.value;
+x=Math.sqrt(x);
+box.value=x;
+}
+</script>
+</body>
+</html>
