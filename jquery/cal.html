@@ -1,0 +1,199 @@
+`<<html>
+<head>
+	<title>demo calculator</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<form name="frm">
+	<div id='calculator'>
+		<div class='top'>
+
+	<input name="result" id="display">
+
+</br>
+</div>
+<div class='keys'>
+	<input type="button" name="1" value="1" onClick="run1()" style="width:80px">
+	<input type="button" name="2" value="2" onClick="run2()" style="width:80px">
+	<input type="button" name="3" value="3" onClick="run3()" style="width:80px">
+	<input type="button" name="plus" value="+" onClick="runplus()" style="width:80px">
+</br>
+<input type="button" name="4" value="4" onClick="run4()" style="width:80px">
+	<input type="button" name="5" value="5" onClick="run5()" style="width:80px">
+	<input type="button" name="6" value="6" onClick="run6()" style="width:80px">
+	<input type="button" name="minus" value="-" onClick="runminus()" style="width:80px">
+</br>
+<input type="button" name="7" value="7" onClick="run7()" style="width:80px">
+	<input type="button" name="8" value="8" onClick="run8()" style="width:80px">
+	<input type="button" name="9" value="9" onClick="run9()" style="width:80px">
+	<input type="button" name="divide" value="/" onClick="rundivide()" style="width:80px">
+</br>
+<input type="button" name="0" value="0" onClick="run0()" style="width:80px">
+	<input type="button" name="." value="." onClick="runpoint()" style="width:80px">
+	<input type="button" name="%" value="%" onClick="runpercent()" style="width:80px">
+	<input type="button" name="x" value="x" onClick="runmultiply()"style="width:80px">
+</br>
+<input type="button" name="^2" value="^2" onClick="runpower(2)"style="width:150px">
+
+<input type="button" name=" √" value=" √" onClick="sqrt()" style="width:150px"></br>
+
+<input type="button" name="clear" value="C" onClick="runclear()"style="width:150px">
+
+<input type="button" name="calc" value="=" onClick="evalu()" style="width:150px">
+</div>
+</div>
+<div id='bot'>
+<input type="button" name="change" value="change theme" onClick="changetheme()" style="width:150px">
+</div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+var box=document.getElementById('display');
+var str=document.getElementsByTagName('result');
+function run1(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+1;
+	
+	$('input[name=result]').val(str);
+	//var x=$('input[name=result]').val();
+	
+
+}
+function run2(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+2;
+	
+	$('input[name=result]').val(str);
+}
+function run3(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+3;
+	
+	$('input[name=result]').val(str);
+}
+function runplus(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+"+";
+	
+	$('input[name=result]').val(str);
+}
+
+function run4(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+4;
+	
+	$('input[name=result]').val(str);
+}
+function run5(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+5;
+	
+	$('input[name=result]').val(str);
+}
+function run6(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+6;
+	
+	$('input[name=result]').val(str);
+}
+function runminus(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+"-";
+	
+	$('input[name=result]').val(str);
+}
+
+function run7(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+7;
+	$('input[name=result]').val(str);
+}
+function run8(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'8';
+	
+	$('input[name=result]').val(str);
+}
+function run9(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'9';
+	
+	$('input[name=result]').val(str);
+}
+function rundivide(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'/';
+	
+	$('input[name=result]').val(str);
+}
+
+function run0(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'0';
+	
+	$('input[name=result]').val(str);
+}
+function runpoint(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'.';
+	
+	$('input[name=result]').val(str);
+}
+function runpercent(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'%';
+	
+	$('input[name=result]').val(str);
+}
+function runmultiply(){
+	var str=$('input[name=result]').val();
+	//console.log(str);
+	str=str+'*';
+	
+	$('input[name=result]').val(str);
+}
+function runclear(){
+	var str=$('input[name=result]').val();
+	str = '';
+	$('input[name=result]').val(str);
+}
+function evalu(){
+	var evalo=eval($('input[name=result]').val());
+	$('input[name=result]').val(evalo);
+}
+function runpower(y){
+	x=box.value;
+	x=Math.pow(x,y);
+	box.value=x;
+}
+function sqrt(x){
+x=box.value;
+x=Math.sqrt(x);
+box.value=x;
+}
+function changetheme(){
+	$('form[name="frm"]').parent().css("background-color", "#7FDBFF");
+	$('input[type=button]').css("width","50px");
+	$('#calculator').css("width","300px");
+	$('#calculator').css("background-color","purple");
+	$('input[type=button]').addClass("animated fadeIn");
+}
+</script>
+</body>
+</html>
