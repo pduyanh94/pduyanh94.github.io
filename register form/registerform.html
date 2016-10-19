@@ -1,0 +1,73 @@
+<<html>
+<head>
+	<title>register form
+	</title>
+	<meta charset='utf-8'>
+	<style type="text/css">
+	*{
+		box-sizing:border-box;
+	}
+	.wrap {
+		text-align: center;
+		 border: 2px solid  #0ae;
+		 background-color: #0ae;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Đăng ký tài khoản </h1>
+		<form action="result.html">
+			<input type="text" name="name" placeholder="Họ và tên" style="width:200px; height:30px;"/><br/>
+			<input type="text" name="place" placeholder="ĐỊa chỉ "style="width:200px; height:30px;"/><br/>
+			<input type="email" name="email" placeholder="Email "style="width:200px; height:30px;"/><br/>
+			<input type="text " name="phone" placeholder="Điện thoại "style="width:200px; height:30px;"/><br/>
+			<input type="password" name="password" placeholder="Mật khẩu "style="width:200px; height:30px;"/><br/>
+			<select id="selectID" name="day" ></select>
+			<select id="selectID2" name="month" ></select>
+			<select id="selectID3" name="year" ></select></br>
+			<input type="radio" name="gender" id="male " value="male"/> <label for="male ">nam </label>
+<input type="radio" name="gender" id="female " value="female" style="margin-left:40px;"/> <label for="female ">nữ  </label></br>
+<input type="submit" value="Đăng ký "style="width:83px;"/>
+		</form>
+	</div>
+<script type="text/javascript">
+
+//function day(){
+	var select=document.getElementById('selectID');
+	var min=1,max=31;
+	
+	for(var i=min;i<=max;i++){
+		var opt=document.createElement('option');
+		opt.value=i;
+		opt.innerHTML=i;
+		select.appendChild(opt);
+	}
+	
+//}
+//function month(){
+	var select=document.getElementById('selectID2');
+	var min=1,max=12;
+	
+	for(var i=min;i<=max;i++){
+		var opt=document.createElement('option');
+		opt.value=i;
+		opt.innerHTML=i;
+		select.appendChild(opt);
+	//}
+	
+}
+var select=document.getElementById('selectID3');
+	var min=1900,max=2020;
+	
+	for(var i=min;i<=max;i++){
+		var opt=document.createElement('option');
+		opt.value=i;
+		opt.innerHTML=i;
+		select.appendChild(opt);
+	//}
+	
+}
+</script>
+</body>
+</html>
