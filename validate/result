@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>result</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<h1>Đăng ký thành công </h1>
+<script type="text/javascript">
+function getParameterByName(name,url) { 
+   if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+}
+var Name=getParameterByName('name');
+var Place=getParameterByName('place');
+var Email=getParameterByName('email');
+var Phone=getParameterByName('phone');
+var day =getParameterByName('day');
+var month  =getParameterByName('month');
+var year =getParameterByName('year');
+var gioitinh=getParameterByName('gender');
+
+
+document.write("Ho va ten: "+ Name+"</br>");
+document.write("Địa chỉ :"+ Place+ "</br>" );
+document.write("Email :"+ Email + "</br>");
+document.write("Phone  :"+ Phone +"</br>");
+document.write("Birth :"+ day +" "+ month+" " +year  +"</br>");
+document.write("giới tính: "+ gioitinh);
+</script>
+</body>
+</html>
