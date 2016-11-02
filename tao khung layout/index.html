@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Kanban Board</title>
+    <link  href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<body>
+<nav>
+    <div class="nav-wrapper center">
+        <a href="#" class="brand-logo center ">Kanban Board </a>
+    </div>
+</nav>
+<section class="container">
+    <div class="row">
+        <div class="col m4">
+            <div class="card">
+                 <h5>TODO(4)
+                <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+</h5>
+                <div class="collection sorted-list">
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <a href="#!" class="collection-item">Alvin</a>
+                   <i class="material-icons right">delete</i> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h5>Doing(3)
+                    <i class="material-icons">mode_edit</i>
+                </h5>
+                <div class="collection sorted-list">
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <i class="material-icons right">delete</i> </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h5>DONE(1)
+                    <i class="material-icons">done</i>
+                </h5>
+                <div class="collection sorted-list">
+                    <a href="#!" class="collection-item">Alvin</a>
+                    <i class="material-icons right">delete</i> </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script>
+    $( function() {
+        $( ".sorted-list" ).sortable({
+            connectWith: ".sorted-list"
+        });
+
+    } );
+</script>
+</body>
+</html>
