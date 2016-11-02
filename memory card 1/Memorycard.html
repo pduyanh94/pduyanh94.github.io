@@ -1,0 +1,68 @@
+<<html>
+<head>
+	<title>Memory card 1</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="content">
+		
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+var cards=['leesin','lulu','galio','udyr','zac','garen'];
+
+ 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+function loadContent() {
+    // Reset progressbar
+    //$('.content').css('display', 'none');
+
+    // Shuffle all cards
+    cards=cards.concat(cards);
+    cards = shuffle(cards);
+
+    // Add cards to screen
+    var html = '';
+    for (var i=0; i<cards.length; i++) {
+        html += '<div class="grid"><div class="card" data-name="' + cards[i] + '">' +
+        '<div class="front"><img src="' + cards[i] + '.png"/></div>' +
+        '<div class="back"><img src="back.jpeg"/></div></div></div>';
+    };
+
+    $('.content').html(html);
+$(".card").click(function(){
+$(this).addClass('show')
+ });
+    // Open begin modal
+    //openModal('begin');
+}
+
+$(function(){
+	loadContent();
+});
+
+  
+</script>
+</body>
+</html>
