@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>table</title>
+	<meta charset="utf-8">
+	<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
+}
+tr:hover {
+	opacity: 0.5;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+<table id="t01" class="tablesort">
+	<thead> 
+  <tr>
+    <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;asc4=1; asc5=1; asc6=1;">Danh muc</th>
+    <th onclick="sort_table(people, 1, asc2); asc1 *= 1; asc2 = -1; asc3 = 1;asc4=1; asc5=1; asc6=1;">Tieu de</th>
+    <th onclick="sort_table(people, 2, asc3); asc1 *= 1; asc2 = 1; asc3 = -1; asc4=1; asc5=1; asc6=1;">Tac gia</th>
+	<th onclick="sort_table(people, 3, asc4); asc1 *= 1; asc2 = 1; asc3 = 1; asc4=-1; asc5=1; asc6=1;">Ngay tao</th>
+	<th onclick="sort_table(people, 4, asc5); asc1 *= -1; asc2 = 1; asc3 = 1;asc4=1; asc5=-1; asc6=1;">Ngay xuat ban</th>
+	<th onclick="sort_table(people, 5, asc6); asc1 *= -1; asc2 = 1; asc3 = 1;asc4=-1; asc5=1; asc6=-1;">Trang Thai</th>
+  </tr>
+</thead>
+<tbody id="main">
+  <tr>
+    <td>Ngôn tình</td>
+    <td>Yêu em từ cái nhìn đầu tiên</td>
+    <td>Cố Mạn</td>
+    <td>4/11/2016</td>
+    <td>5/11/2016</td>
+    <td>bản nháp</td>
+  </tr>
+  <tr>
+     <td>Kinh dị </td>
+    <td>The Ring </td>
+    <td>Suzuki</td>
+    <td>1/11/2016</td>
+    <td>7/11/2016</td>
+    <td>đã xuất bản</td>
+  </tr>
+  <tr>
+     <td>trinh thám</td>
+    <td>10 người da đen nhỏ</td>
+    <td>Alex</td>
+    <td>2/11/2016</td>
+    <td>9/11/2016</td>
+    <td>bản nháp</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</body>
+
+<script type="text/javascript">
+ var people, asc1 = 1,
+            asc2 = 1,
+            asc3 = 1;
+            asc4=1;
+            asc5=1;
+            asc6=1;
+
+        window.onload = function () {
+            people = document.getElementById("main");
+        }
+
+        function sort_table(tbody, col, asc) {
+            var rows = tbody.rows,
+                rlen = rows.length,
+                arr = new Array(),
+                i, j, cells, clen;
+            // fill the array with values from the table
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                arr[i] = new Array();
+                for (j = 0; j < clen; j++) {
+                    arr[i][j] = cells[j].innerHTML;
+                }
+            }
+            // sort the array by the specified column number (col) and order (asc)
+            arr.sort(function (a, b) {
+                return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
+            });
+            // replace existing rows with new rows created from the sorted array
+            for (i = 0; i < rlen; i++) {
+                rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
+            }
+        }
+</script>
+</html>
