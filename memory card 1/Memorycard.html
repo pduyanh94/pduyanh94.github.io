@@ -1,19 +1,33 @@
-<<html>
+<html>
 <head>
 	<title>Memory card 1</title>
 	<meta charset='utf-8'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div id="snow">
+    <audio id="bg-music" loop>
+            <source src="Background.MP3" type="audio/mpeg">
+        </audio>
+        <audio id="fail-music">
+            <source src="fail.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="true-music">
+            <source src="win.mp3" type="audio/mpeg">
+        </audio>
+
 <div class="wrap">
 	<div class="content">
+
+</div>
 		
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
+document.getElementById('bg-music').play();
 var cards=['leesin','lulu','galio','udyr','zac','garen'];
-
+var current=null;
  
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -33,6 +47,36 @@ function shuffle(array) {
 
   return array;
 }
+function flip(card){
+    
+    $(card).toggleClass('flipped');
+     $(card).css('pointer-events', 'none');
+    if(!current){
+        current=$(card);
+    } else{
+         //$('.card').css('pointer-events', 'none');
+
+        if(current.attr('data-name')!= $(card).attr('data-name')){
+            document.getElementById('fail-music').play();
+            setTimeout(function(){
+
+              $(current).toggleClass('flipped');
+                $(card).toggleClass('flipped');
+                $(current).css('pointer-events', 'auto');
+                $(card).css('pointer-events', 'auto');
+                current=null;
+            },600);
+        } else{
+            document.getElementById('true-music').play();
+
+            setTimeout(function(){
+                $(card).css('opacity','0');
+                current.css('opacity','0');
+                current=null;
+            },300);
+        }
+    }
+}
 
 function loadContent() {
     // Reset progressbar
@@ -45,15 +89,13 @@ function loadContent() {
     // Add cards to screen
     var html = '';
     for (var i=0; i<cards.length; i++) {
-        html += '<div class="grid"><div class="card" data-name="' + cards[i] + '">' +
-        '<div class="front"><img src="' + cards[i] + '.png"/></div>' +
-        '<div class="back"><img src="back.jpeg"/></div></div></div>';
+        html += '<div class="grid">' + '<div class="card" data-name="'+ cards[i] +'" onclick="flip(this)">'
+                    +'<div class="front"><img src="back.jpg"/> </div>'+
+                    '<div class="back"><img src="'+cards[i]+'.png"/> </div>'+'</div></div>';
     };
 
     $('.content').html(html);
-$(".card").click(function(){
-$(this).addClass('show')
- });
+
     // Open begin modal
     //openModal('begin');
 }
