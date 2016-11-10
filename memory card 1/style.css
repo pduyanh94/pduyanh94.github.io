@@ -76,6 +76,40 @@ margin-right: 20px;
 body{
 	background-color: #333; 
 }
+.modal, .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.modal-backdrop {
+    z-index: 900;
+    background-color: #000;
+    opacity: 0.5;
+}
+.modal .dialog {
+    margin: 10% auto;
+    padding: 10px;
+    width: 500px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    overflow: auto;
+}
+
+.btn-reset {
+    margin-top: 40px;
+    background-color: #f57c00;
+    
+    transition: opacity 3s;
+    opacity: 0;
+}
 #snow{
 	background: none;
 	font-family: Androgyne;
