@@ -108,7 +108,7 @@ body{
     background-color: #f57c00;
     
     transition: opacity 3s;
-    opacity: 0;
+    opacity: 1;
 }
 #snow{
 	background: none;

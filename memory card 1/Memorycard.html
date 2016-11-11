@@ -89,7 +89,7 @@ function flip(card){
     if(!current){
         current=$(card);
     } else{
-         //$('.card').css('pointer-events', 'none');
+         $('.card').css('pointer-events', 'none');
 
         if(current.attr('data')!= $(card).attr('data')){
             document.getElementById('fail-music').play();
@@ -97,9 +97,12 @@ function flip(card){
 
               $(current).toggleClass('flipped');
                 $(card).toggleClass('flipped');
-                $(current).css('pointer-events', 'auto');
-                $(card).css('pointer-events', 'auto');
+                //$(current).css('pointer-events', 'auto');
+                //$(card).css('pointer-events', 'auto');
                 current=null;
+                 if(isPlaying){
+                    $('.card').css('pointer-events', 'auto');
+                }
             },600);
         } else{
             document.getElementById('true-music').play();
@@ -115,8 +118,10 @@ function flip(card){
                 //document.getElementById('bg-music').play();
                 stopGame();
                 openModal('win');
-            }
-            },300);
+            } else{
+            $('.card').css('pointer-events', 'auto');
+        }
+            },600);
         }
     }
 }
